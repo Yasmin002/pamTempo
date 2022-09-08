@@ -1,18 +1,33 @@
-import React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function Tempo(props){
+export default function Tempo(props) {
+
     return (
         <>
-        <Text style={styles.texto }>Min: {props.data.min}</Text>
-        <Text style={styles.texto }>Max:</Text>
-        <Text style={styles.texto }>Descrição:</Text>
+            <View style={styles.bloco}>
+                <Text style={styles.texto}>{props.dados.city_name}</Text>
+                <Text style={styles.texto}>Clima de hoje:</Text>
+                <Text style={styles.texto}>Temperatura atual: {props.dados.temp}</Text>
+                <Text style={styles.texto}>Min: {props.atuais.min}</Text>
+                <Text style={styles.texto}>Max: {props.atuais.max}</Text>
+                <Text style={styles.texto}>Descrição: {props.atuais.description}</Text>
+                <Text style={styles.texto}>Clima de amanhã: </Text>
+                <Text style={styles.texto}>Min: {props.depois.min}</Text>
+                <Text style={styles.texto}>Max: {props.depois.max}</Text>
+                <Text style={styles.texto}>Descrição: {props.depois.description}</Text>
+            </View>
         </>
     );
 }
- const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
     texto: {
         fontSize: 20,
-        marginTop:10
+        marginTop: 5,
+        color: '#000000'
     },
- });
+    bloco: {
+        alignItems: 'center',
+    }
+});
